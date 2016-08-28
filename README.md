@@ -1,20 +1,24 @@
 -- SignUP
 
 curl -X POST http://localhost:9000/signup -H 'Content-Type: application/json' -d '{"firstName": "Pari", "lastName": "B", "email": "pari@yahoo.com", "password": "MyPassword123!!"}' -v
+
 User will receive an email upon signup.
 
 -- SignIn
 curl -X POST http://localhost:9000/signin -H 'Content-Type: application/json' -d '{"email": "pari@yahoo.com", "password": "MyPassword123!!" , "rememberMe": true}' -v
+
 User will not be allowed to sign in without confirmation. Above call will fail.
 
 -- Confirm
 Email will contain confirmation link
 e.g. http://localhost:9000/confirm/fe35def7-bde5-4244 
+
 Click on confirmation link
 
 
 -- SignIn
 curl -X POST http://localhost:9000/signin -H 'Content-Type: application/json' -d '{"email": "pari@yahoo.com", "password": "MyPassword123!!" , "rememberMe": true}' -v
+
 Once confirmed, user will get JWT token
 
 --Authentication/Authorization
